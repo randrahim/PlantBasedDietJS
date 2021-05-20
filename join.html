@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Plant Based Diet :: Order</title>
+	<link rel="stylesheet" href="styles.css">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="https://www.flaticon.com/premium-icon/icons/svg/278/278193.svg" sizes="16x16" type="image/png">
+	<script src="modernizr.custom.05819.js"></script>
+</head>
+
+<body id="wrapper">
+	<header><h1>Plant Based Diet</h1></header>
+		<nav>
+			<a href="index.html">Home</a>&nbsp;&nbsp;
+			<a href="recipes.html">Recipes</a>&nbsp;&nbsp;
+			<a href="exercise.html">Exercise</a>&nbsp;&nbsp;
+			<a href="mindfulness.html">Mindfulness</a>&nbsp;&nbsp;
+			<a href="security.html">Web Security</a>&nbsp;&nbsp;
+			<a href="order.html">Order</a>&nbsp;&nbsp;
+			<a href="join.html">Join</a>			
+	  	</nav>
+
+<main > 
+	<article id="contact" >
+		<h2>Book Your Seat for Keto Diet Workshop</h2>
+		<section id="ticket">
+			<h3>Reservation Details</h3>
+			<div id="passengersSection">
+				<h4>Participant</h4>
+				<ul id="passengers"></ul>
+			</div>
+			<div id="dateSection">
+				<h4>Date</h4>
+				<p id="selectedDate"></p>
+			</div>
+			<div id="countdownSection">
+				<h4>Countdown to Start</h4>
+				<p id="countdown"></p>
+			</div>
+			<div id="lodgingsSection">
+				<h4>Preferred Lodgings</h4>
+				<ul id="profileLodgings"></ul>
+			</div>
+		</section>
+	
+		<section>
+		<form id="orderTicket">
+			<fieldset class="text">
+				<legend>Add Participant</legend>
+				<label for="fname">First Name</label>
+				<input type="text" id="fname" /><br>
+				<label for="lname">Last Name</label>
+				<input type="text" id="lname" /><br>
+				<input type="button" value="Add" id="addName" />
+			</fieldset><br>
+			
+			<fieldset>
+				<legend>Pick a date</legend>
+				<input type="text" id="tripDate" />
+			</fieldset><br>
+			
+			<fieldset class="checks">
+				<legend>Choose a payment method</legend>
+				<input type="radio" id="single" name="Payment" />
+				<label for="single" id="singleLabel">  Single Payment</label><br>
+				<input type="radio" id="multiple" name="Payment" /> 
+				<label for="multiple" id="multipleLabel"> 60 Monthly Payments</label>
+			</fieldset><br>
+			<fieldset class="checks">
+				<legend><span>Preferred Reservations</span></legend>
+				<input type="checkbox" id="fire" value="1 Month" name="lodgings" />
+				<label for="fire" id="fireLabel">1 Month</label><br>
+				<input type="checkbox" id="horseshoe" value="2 Month" name="lodgings" />
+				<label for="horseshoe" id="horseshoeLabel">2 Month</label><br>
+				<input type="checkbox" id="spruce" value="3 Month" name="lodgings" />
+				<label for="spruce" id="spruceLabel">3 Month</label><br>
+				<input type="checkbox" id="ursamajor" value="4 Month" name="lodgings" />
+				<label for="ursamajor" id="ursamajorLabel">4 Month</label><br>
+				<input type="checkbox" id="bearmeadow" value="5 Month" name="lodgings" />
+				<label for="bearmeadow" id="bearmeadowLabel">5 Month</label>
+			</fieldset>
+			</form>
+		</section>
+
+		<div id="cal">
+			<div id="prev">&lt; previous</div>
+			<div id="next">next &gt;</div>
+			<table id="calendar">
+				<caption></caption>
+				<tr>
+					<th>Sun</th>
+					<th>Mon</th>
+					<th>Tue</th>
+					<th>Wed</th>
+					<th>Thu</th>
+					<th>Fri</th>
+					<th>Sat</th>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					</tr>
+			</table>
+			<p id="close">close <span>&#9746;</span></p>
+		</div><br>
+		<div id="caption">Our locations</div>
+		<div id="cities">
+			<div id="dubai">Dubai</div>
+			<div id="paris">Paris</div>
+			<div id="rome">Rome</div>
+		</div>
+		<div>
+			<div id="latlog">
+			<div id="latitude">Latitude</div>
+			<div id="longitude">Longitude</div>
+			<div id="altitude">Altitude</div>
+		</div>
+		</div>
+		<div id="map"></div>
+	</article>
+	
+		
+	 
+	 <script src="http://maps.googleapis.com/maps/api/js?v=3.exp&sensor=true&callback=geoTest"></script>
+	 <script src="script3.js"></script>
+<script>
+	"use strict"; // interpret contents in JavaScript strict mode
+	var countdown;
+	var lodging = [];
+	var objectString;
+	var arrayString;
+	var dateObject = new Date();
+	var ticket = {
+		passengersOnTicket: 0,
+		passengers: {},
+		calcCost: updateTotalCost };
+	function displayCalendar(whichMonth) {
+		var date;
+		var dateToday = new Date();
+		var dayOfWeek;
+		var daysInMonth;
+		var dateCells;
+		var captionValue;
+		var month;
+		var year;
+		var monthArray = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+		if (whichMonth === -1) {
+			dateObject.setMonth(dateObject.getMonth() - 1);
+		} else if (whichMonth === 1) {
+			dateObject.setMonth(dateObject.getMonth() + 1);
+		}
+		month = dateObject.getMonth();
+		year = dateObject.getFullYear();
+		dateObject.setDate(1);
+		dayOfWeek = dateObject.getDay();
+		captionValue = monthArray[month] + " " + year;
+		document.querySelector("#cal table caption").innerHTML = captionValue;
+		if(month===0||month===2||month===4|| month === 6 || month === 7 || month === 9 || month === 11) { // Jan, Mar, May, Jul, Aug, Oct, Dec   
+		daysInMonth = 31;
+		} else if (month === 1) { // Feb
+		if (year % 4 === 0) { // leap year test
+			if (year % 100 === 0) {
+				// year ending in 00 not a leap year unless
+				// divisible by 400
+				if (year % 400 === 0) {
+					daysInMonth = 29; 
+				}else{
+					daysInMonth = 28;
+				}
+			} else {
+				daysInMonth = 29;
+			}
+		} else {
+			daysInMonth = 28;
+		}
+	} else { // Apr, Jun, Sep, Nov
+		daysInMonth = 30;
+	}
+		
+	dateCells = document.getElementsByTagName("td");
+	for (var i = 0; i < dateCells.length; i++) {
+		// clear existing table dates
+		dateCells[i].innerHTML = "";
+		dateCells[i].className = "";
+	}
+		
+	for (var i = dayOfWeek; i < daysInMonth + dayOfWeek; i++) {
+		// add dates to days cells
+		dateCells[i].innerHTML = dateObject.getDate();
+		dateCells[i].className = "date";
+		if (dateToday < dateObject) {
+			dateCells[i].className = "futuredate";
+		}
+		date = dateObject.getDate() + 1;
+		dateObject.setDate(date);
+	}
+		
+	dateObject.setMonth(dateObject.getMonth() - 1);
+	// reset month to month shown
+	document.getElementById("cal").style.display = "block";
+	// display calendar if it’s not already visible
+	}
+		
+	function selectDate(event) {
+		if (event === undefined) { // get caller element in IE8
+		event = window.event;
+		}
+		var callerElement = event.target || event.srcElement;
+		if (callerElement.innerHTML === "") {
+		// cell contains no date, so don’t close the calendar
+		document.getElementById("cal").style.display = "block";
+		return false;
+		}
+		dateObject.setDate(callerElement.innerHTML);
+		var fullDateToday = new Date();
+		var dateToday = Date.UTC(fullDateToday.getFullYear(), fullDateToday.getMonth(), fullDateToday.getDate());
+		var selectedDate = Date.UTC(dateObject.getFullYear(), dateObject.getMonth(), dateObject.getDate());
+		if (selectedDate <= dateToday) {
+		document.getElementById("cal").style.display = "block";
+		return false;
+		}
+		document.getElementById("tripDate").value = dateObject.toLocaleDateString();
+		hideCalendar();
+		countdown = setInterval(updateCountdown, 1000);
+		document.getElementById("countdownSection").style.display = "block";
+		
+		ticket.date = dateObject.toLocaleDateString();
+		document.getElementById("selectedDate").innerHTML = ticket.date;
+		document.getElementById("dateSection").style.display ="block";
+	}
+		
+	function hideCalendar() {
+		document.getElementById("cal").style.display = "none";
+	}
+		
+	function prevMo() {
+		displayCalendar(-1);
+	}
+	function nextMo() {
+		displayCalendar(1);
+	}
+		
+	function updateTotalCost() {
+		var totalCost = this.passengersOnTicket * 250;
+		var monthlyCost = totalCost / 60;
+		var shortMonthlyCost = monthlyCost.toFixed(0);
+		document.getElementById("singleLabel").innerHTML = "Single payment of $" + totalCost.toLocaleString();
+		document.getElementById("multipleLabel").innerHTML = "60 monthly payments of $" +
+		shortMonthlyCost.toLocaleString();
+	}
+	function updateCountdown() {
+		var dateToday = new Date();
+		var dateFrom = Date.UTC(dateToday.getFullYear(),dateToday.getMonth(), dateToday.getDate(), dateToday.getHours(), dateToday.getMinutes(), dateToday.getSeconds());
+		var dateTo = Date.UTC(dateObject.getFullYear(), dateObject.getMonth(), dateObject.getDate(),19, 0, 0); // all launches at 8:00pm UTC
+		if ((dateTo - dateFrom) < 1000) { // time will be less than 0 when setInterval runs next
+			clearInterval(countdown);
+			document.getElementById("countdownSection").style.display = "none";
+			}    
+		// days
+		var daysUntil = Math.floor ((dateTo - dateFrom) / 86400000);   
+		// months
+		var monthsUntil = Math.floor (daysUntil / 31);
+		//years
+		var yearsUntil = Math.floor (monthsUntil / 12);
+		document.getElementById("countdown").innerHTML = yearsUntil + " Years: " + monthsUntil + " Months: " + daysUntil + " Days left";
+			
+	}
+	function registerName() {
+		var passengerList = document.getElementById("passengers");
+		var passengerName = document.createElement("li");
+		var newFnameProp;
+		var newLnameProp;
+		ticket.passengersOnTicket += 1;
+		newFnameProp = "fname" + ticket.passengersOnTicket;
+		newLnameProp = "lname" + ticket.passengersOnTicket;
+		// add first+last names to ticket object as new properties
+		ticket.passengers[newFnameProp] = document.getElementById("fname").value;
+		ticket.passengers[newLnameProp] = document.getElementById("lname").value;
+		// add entered name to passenger list in ticket section
+		passengerName.innerHTML = ticket.passengers[newFnameProp] + " " + ticket.passengers[newLnameProp];
+		passengerList.appendChild(passengerName);
+		// clear first and last names from form
+		document.getElementById("fname").value = "";
+		document.getElementById("lname").value = "";
+		// display ticket and passengers section
+		document.getElementById("ticket").style.display = "block";
+		document.getElementById("passengersSection").style.display ="block";
+		// return focus to First Name field to facilitate entry of
+		// another passenger name
+		document.getElementById("fname").focus();
+		ticket.calcCost();
+	}
+	// add lodging to profile
+function registerLodging(event) {
+   if (event === undefined) { // get caller element in IE8
+      event = window.event;
+   }
+   var callerElement = event.target || event.srcElement;
+   var lodgingName = callerElement.value;
+   if (callerElement.checked) { // if box has just been checked
+      // add checkbox value to lodging array
+      lodging.push(lodgingName);
+
+      // add checkbox value to list in profile section
+      var newLodging = document.createElement("li");
+      newLodging.innerHTML = lodgingName;
+      document.getElementById("profileLodgings").appendChild(newLodging);
+      // make profile section and lodging section visible
+      document.getElementById("profile").style.display = "block";
+      document.getElementById("lodgingsSection").style.display = "block";
+   } else { // if box has just been unchecked
+      var listItems = document.querySelectorAll("#profileLodgings li");
+      for (var i = 0; i < listItems.length; i++) {
+         if (listItems[i].innerHTML === lodgingName) {
+            // remove element at index i from array
+            lodging.splice(i, 1);
+            // remove lodging from profile list
+            listItems[i].parentNode.removeChild(listItems[i]);
+            break;
+         }
+      }
+   }
+}
+
+// convert form input to strings for submission
+function convertToString() {
+   // convert lodging array to string
+   arrayString = lodging.toString();
+   // convert profile object to string
+   objectString = JSON.stringify(profile);
+}
+	function createEventListeners() {
+		var dateField = document.getElementById("tripDate");
+		if (dateField.addEventListener) {
+			dateField.addEventListener("click", displayCalendar, false);
+		} else if (dateField.attachEvent) {
+			dateField.attachEvent("onclick", displayCalendar);
+		}  
+			
+		var dateCells = document.getElementsByTagName("td");
+		if (dateCells[0].addEventListener) {
+			for (var i = 0; i < dateCells.length; i++) {
+				dateCells[i].addEventListener("click", selectDate,false);
+			}
+		} else if (dateCells[0].attachEvent) {
+			for (var i = 0; i < dateCells.length; i++) {
+			dateCells[i].attachEvent("onclick", selectDate);
+			}
+		}
+		var closeButton = document.getElementById("close");
+		if (closeButton.addEventListener) {
+			closeButton.addEventListener("click", hideCalendar, false);
+		} else if (closeButton.attachEvent) {
+			closeButton.attachEvent("onclick", hideCalendar);
+		}
+		var prevLink = document.getElementById("prev");
+		var nextLink = document.getElementById("next");
+		if (prevLink.addEventListener) {
+			prevLink.addEventListener("click", prevMo, false);
+			nextLink.addEventListener("click", nextMo, false);
+		} else if (prevLink.attachEvent) {
+			prevLink.attachEvent("onclick", prevMo);
+			nextLink.attachEvent("onclick", nextMo);
+		}
+		var nameButton = document.getElementById("addName");
+		if (nameButton.addEventListener) {
+			nameButton.addEventListener("click", registerName, false);
+		} else if (nameButton.attachEvent) { 
+			nameButton.attachEvent("onclick", registerName);
+		}   
+		var lodgings = document.getElementsByName("lodgings");
+		if (lodgings[0].addEventListener) {
+			for (var i = 0; i < lodgings.length; i++) {
+				lodgings[i].addEventListener("change", registerLodging, false);
+			}
+		} else if (lodgings[0].attachEvent) {
+			for (var i = 0; i < lodgings.length; i++) {
+				lodgings[i].attachEvent("onchange", registerLodging);
+			}
+		}
+		var button = document.getElementById("createBtn");
+		if (button.addEventListener) {
+			button.addEventListener("click", convertToString, false);
+		} else if (button.attachEvent) {
+			button.attachEvent("onclick", convertToString);
+		}
+	}
+	if (window.addEventListener) {
+		window.addEventListener("load", createEventListeners, false);
+	} else if (window.attachEvent) {
+		window.attachEvent("onload", createEventListeners);
+	}
+</script>
+	
+</main>
+
+<footer>
+	Copyright ©2020 Plant Based Diet<br>
+	rand@rahim.com
+</footer>
+</body>
+</html>

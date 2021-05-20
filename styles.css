@@ -1,0 +1,306 @@
+html { background: #CFDEEB; }
+h1 { line-height: 200%;	 margin-bottom: 0; }
+h2 { color: #3399CC; font-family: Georgia, serif; }
+h3 { color: #0C54FF; text-align: center;}
+h4 { color:#216EDA; text-align: left;}
+h6 { color:#216EDA; text-align: left;}
+
+/* Body Section */
+body { background-color:  #5CD119; color: #666666; font-family: Verdana, Arial, sans-serif; } 
+#wrapper { width: 90%; margin-right: auto; margin-left: auto; background-color: #FFFFFF; min-width: 800px; max-width: 1024px; box-shadow: 3px 3px 3px #000033; }
+header { background-color: #1EA1E4; color: #FFFFFF; font-family: Georgia, serif; text-align: center; padding-top: 3px; height: 100px; }
+
+/* Navigation Section */
+nav { font-weight: bold; background-color: #ABFC97; padding: 0.5em .5em .5em 2em; text-align: center; }
+nav a { text-decoration: none; color: #090446; }
+nav a         { text-decoration: none; }
+nav a:link    { color: #000033; }
+nav a:visited { color: #344873; }
+nav a:hover   { color: #FFFFFF; }
+
+/* Main Section */
+main { padding-left: 20px; padding-right: 20px; display: block; height: 1000px; width: 90%;	}
+
+/* Video */
+video { float:right; padding-left: 70px; } 
+/* Audeo */
+audio {margin-left: 35%; } 
+
+/* Top Section */
+#top1 , #top2, #top3, #top4{ margin-top: 40px; margin-left: 80px; height: 200px; text-align: left; position: relative; padding: 0 10px; }
+#top5 { margin: 20px 140px; height: 50px; text-align: center; position: relative;  }
+#top6 {margin-top: 40px; margin-left: 80px; height: 800px; text-align: left; position: relative; padding: 0 30px;}
+.topImg { width: 28%; float:left; padding-right: 50px; }
+
+/* Footer Section */
+footer { font-size: 15px; font-style: italic; text-align: center; padding: 10px; background-color: #ABFC97; }
+
+/* Recipe Column Section */
+#recipe-section { margin-top: 20px; margin-left: 80px; align-items: center; position: relative; }
+.column1, .column2 { float: left; width: 45%; text-align: center; padding: 0 19px; }
+.column1 { border-right: 2px solid #C2E7DA; }
+div ul, ol, p { text-align: left; }
+.row:after { content: ""; display: table; clear: both; }
+.recipe-img{padding: 10px; width: 40%; }
+
+/* Positive vs. Negative table Section */
+table { margin-left:80px; margin-top: 20px; border: 1px solid #3399cc; width: 90%; border-collapse: collapse;	} 
+td, th { padding: 5px; border: 1px solid #3399cc; }	
+td { text-align: left; }
+.text { text-align: left; }
+tr:nth-of-type(even) { background-color:#F5FAFC; }
+
+/* Form Section */
+form { background-color:#DAF2D5; font-family: Arial, sans-serif; padding: 10px; color: #121212; font-weight: bold;  }
+label { /*float: left; display: block;*/  padding-right: 10px; width: 7em;}
+input, textarea { margin-bottom: 1em; /*display: block; */} 
+#mySubmit, #submit { font-weight: bold; font-size: 16px  }
+#item1, #item2, #item3 { float: left; clear: center; margin: 10px; }
+#orderinfo, #additionalinfo, #submitbutton {
+   border: none;
+}
+#deliveryinfo label {
+   display: block;
+   float: left;
+   clear: left;
+   margin-top: 5px;
+}
+
+#billingAddress label {
+   margin-top: 5px;
+}
+
+/* Contact Us Section */
+#contact { margin-left: 90px; font-size: 1em; padding: 1px;}
+.contactImg { width: 10%;  padding-right: 70px; float: left;}
+
+/* Responsive Display 1024px */
+header, nav, main, footer { display: block; }
+#mobile { display: none; }
+#desktop { display: inline; }
+
+@media only screen and (max-width: 1024px) {
+body { margin: 0; padding: 0; background-image: none;}
+#wrapper { width: auto; min-width: 0; margin: 0; box-shadow: none;}
+h1  {margin: 0; }
+nav {float: none; width: auto; padding: 0.5em;	}
+nav li { display: inline-block; }
+nav a { padding: 1em; }
+main { padding: 1em; margin-left: 0; font-size: 90%; }
+footer { margin: 0; } }
+
+/* Responsive Display 768px */
+@media only all and (max-width: 768px) {
+h1 { height: 100%; font-size: 1.5em; }
+#wrapper {margin: 0; } 
+header {height: 60px; }
+nav { padding: 8px;;}
+nav a { display: block; padding: 0; font-size: 1em;	}
+nav ul { margin: 0;  padding: 0;}
+nav li {display: block; margin: 0; padding: 0;}
+main { 	padding-left: 0; margin-left: 0; height: 1500px;} 
+#top1 , #top2, #top3  { height: 400px; margin:0; }
+#top4 { height: 400px; margin-left: 40px; }
+#top5 {height: 80px; margin:50px 0; padding: 15px 0; }
+#top6 {height: 100px; margin-left: 0px; width: 80%;  }
+
+div { margin-top: 10px; }	
+.topImg { width: 40%; float: none; margin-left: 80px;}
+video {  width: 100%; padding-top: 50px; padding-bottom: 40px;}
+audio { margin: 20%;}
+.column1, .column2 { width: 100%; border: 0;  } 
+#contact { margin-left: 0; font-size: .8em;}
+.contactImg { width: 10%; float:left; margin-left: 10px;}
+#recipe-section	 { margin:0; }		 
+form { margin: 10px; width: 100%;}
+fieldset, #instructions { margin: 0px; width: 95%;}
+
+table { width: 80%; padding: 0; margin-left:40px;}
+footer { padding: 10px; }
+#mobile { display: inline; }
+#desktop { display: none; } }
+
+
+
+
+/* For the Join page */
+
+/* apply a natural box layout model to all elements */
+* {
+   -moz-box-sizing: border-box;
+   -webkit-box-sizing: border-box;
+   box-sizing: border-box;
+}
+
+/* reset rules */
+
+#calendar, #calendar td, #calendar th { 
+   margin: 0;
+   padding: 0;
+   border: 0;
+   font-size: 100%;
+   font: inherit;
+   vertical-align: baseline;
+}
+article {
+   padding: 20px 20px 40px;
+   position: relative;
+}
+
+/* ticket section */
+#ticket {
+   float: right;
+   width: 300px;
+   margin: 15px 10px 30px 10px;
+   border: 1px solid black;
+   background: white;
+   padding: 20px;
+   -moz-border-radius-topleft: 10px;
+   -webkit-border-top-left-radius: 10px;
+    border-top-left-radius: 10px;
+   -moz-border-radius-topright: 10px;
+   -webkit-border-top-right-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+#ticket, #dateSection, #passengersSection, #countdownSection {
+   display: block;
+}
+
+#ticket li, #ticket p {
+   text-indent: 1em;
+   margin-top: 1px;
+}
+
+#countdown {
+   font-weight: bold;
+}
+
+/* calendar */
+#cal {
+   display: none;
+   position: absolute;
+   left: 230px;
+   top: 65px;
+   background: lightblue;
+   color: white;
+   padding: 10px;
+   -moz-border-radius-topleft: 10px;
+   -webkit-border-top-left-radius: 10px;
+    border-top-left-radius: 10px;
+   -moz-border-radius-topright: 10px;
+   -webkit-border-top-right-radius: 10px;
+    border-top-right-radius: 10px;
+    
+}
+
+#cal table {
+   clear: both;
+}
+
+#cal table caption {
+   font-weight: bold;
+   font-size: 14pt;
+   margin-top: 10px;
+   margin-bottom: 10px;
+   background: rgb(46,49,146);
+}
+
+#cal table th {
+   text-align: right;
+}
+
+#cal table th, #cal table td {
+   width: 2em;
+   padding: 4px;
+}
+
+#cal table td {
+   color: red;
+   text-align: right;
+   cursor: pointer;
+}
+
+#prev {
+   float: left;
+   padding: 4px;
+   cursor: pointer;
+   color: black;
+}
+
+#next {
+   float: right;
+   padding: 4px;
+   cursor: pointer;
+   color: black;
+}
+
+#cal table td.futuredate {
+   color: green;
+}
+
+#cal table td.futuredate:hover, #prev:hover, #next:hover, #close:hover {
+   background: yellow;
+   color: black;
+}
+
+#close {
+   color: black;
+   float: right;
+   padding: 0 4px;
+   cursor: pointer;
+}
+
+#close span {
+   font-size: 20pt;
+}
+
+#cities {
+   overflow: auto;
+   display:inline-block;
+   margin-left: 35%;
+}
+
+#cities div {
+   height: 2em;
+   text-align: center;
+   float: left;
+   line-height: 2em;
+   margin: 0 0.25em;
+   background: lightseagreen;
+   color: white;
+   padding: 0 1em;
+   cursor: default;
+   text-align: center;
+}
+
+#caption {
+   text-align: center;
+   width: 100%;
+   margin: 0.5em 0;
+   font-weight: bold;
+}
+
+#latlog {
+   overflow: auto;
+   display:inline-block;
+   margin-left: 30%;
+}
+#latlog div {
+   height: 2em;
+   text-align: center;
+   float: left;
+   line-height: 2em;
+   margin: 0 0.25em;
+   background: lightsteelblue;
+   color: black;
+   padding: 0 1em;
+   cursor: default;
+   text-align: center;
+
+}
+
+#map {
+   min-height: 250px;
+   width: 100%;
+}

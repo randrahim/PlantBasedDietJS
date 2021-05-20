@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head -->
+<head>
+ <title>Plant Based Diet :: Contact Us</title>
+ <link rel="stylesheet" href="styles.css">
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="icon" href="https://www.flaticon.com/premium-icon/icons/svg/278/278193.svg" sizes="16x16" type="image/png">
+ <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"> </script> -->
+ <script src="modernizr.custom.05819.js"></script>
+ <!-- <script> $(document).ready(function() { alert("Welcome to our website");	});  </script> -->
+</head>
+
+<!-- Body -->
+<body id="wrapper">
+  <header><h1>Plant Based Diet</h1></header>
+   <nav>
+         <a href="index.html">Home</a>&nbsp;&nbsp;
+         <a href="recipes.html">Recipes</a>&nbsp;&nbsp;
+         <a href="exercise.html">Exercise</a>&nbsp;&nbsp;
+         <a href="mindfulness.html">Mindfulness</a>&nbsp;&nbsp;
+         <a href="security.html">Web Security</a>&nbsp;&nbsp;
+         <a href="order.html">Order</a>&nbsp;&nbsp;
+         <a href="join.html">Join</a>			
+   </nav>
+
+<!-- Main -->
+<main> 
+  <article id="contact">
+   <h2>Magazine Order Form</h2>
+   <div id="errorMessage"></div>
+   <form novalidate="novalidate">
+      <fieldset id="deliveryinfo">
+         <legend>Delivery Information</legend>
+         <label for="fname">First Name</label>
+            <input type="text" id="fname" name="fname" maxlength="10" required="required" /><br>
+         <label for="lname">Last Name</label>
+            <input type="text" id="lname" name="lname" maxlength="10" required="required" /><br>
+         <label for="email">Email</label>
+            <input type="email" id="emailbox" /> <p id="emailError" class="errorMsg"></p>
+         <label for="phone">Phone</label>
+            <input type="text" id="phone" name="phone" maxlength="10" required="required" /><br>
+<!-- Adding regular expression to check if the entered user name is not less than 4 letters-->
+         <label for="uname">Username</label>
+            <input type="text" id="uname" maxlength="15" />
+            <p id="usernameError" class="errorMsg"></p>
+<!-- Adding regular expression to check if the entered passwords are match and at least 8 characters -->
+         <label for="pw1">Password</label>
+            <input type="password" id="pw1" />
+         <label for="pw2">Password (confirm)</label><br>
+            <input type="password" id="pw2" />
+            <p id="passwordError" class="errorMsg"></p>     
+      </fieldset> <br>
+
+      <fieldset ><legend>Billing Address</legend> 
+         <label>Street <input type="text" name="street" id="street" size="40"></label><br>
+         <label>City &nbsp;&nbsp;&nbsp;<input type="text" name="city" id="city" maxlength="16" size="16"></label>
+         <label>State <input type="text" name="state" id="state" maxlength="2" size="3"></label>
+         <label>Zip Code <input type="text" name="zip" id="zip" maxlength="5" size="6"></label>
+      </fieldset>  <br>
+
+      <fieldset id="orderinfo">
+         <fieldset id="crustbox">
+            <legend>Kind of Magazine Copy</legend> <br>
+            <label for="thin"><input type="radio" name="crust" id="thin" value="Thin" />  Hard Copy</label>
+            <label for="thick"><input type="radio" name="crust" id="thick" value="Deep Dish" />  PDF Copy</label>
+      </fieldset> <br>
+            
+      <fieldset id="sizebox">
+         <legend>Type of Magazine</legend><br>
+         <select id="size" name="size" required="required">
+            <option value="small">Healthy</option>
+            <option value="medium">Life Style</option>
+            <option value="large">Science</option>
+            <option value="XL">Travel</option>
+         </select>
+      </fieldset>  <br>
+
+      <fieldset id="toppingbox">
+         <legend>Period of Subscription</legend><br>
+         <label for="pepperoni"><input type="checkbox" id="pepperoni" name="toppings" value="Pepperoni" />   3 Months</label> 
+         <label for="sausage"><input type="checkbox" id="sausage" name="toppings" value="Sausage" />   6 Months</label>
+         <label for="greenpep"><input type="checkbox" id="greenpep" name="toppings" value="Green Peppers" />   9 Months</label>
+         <label for="onion"><input type="checkbox" id="onion" name="toppings" value="Onions" />   12  Months</label>
+         <label for="xcheese"><input type="checkbox" id="xcheese" name="toppings" value="Extra Cheese" />   24 Months</label>
+      </fieldset>  <br>
+         
+      <fieldset id="submitbutton">
+         <input type="submit" id="submitBtn" value="Add to Cart" />
+      </fieldset>
+   </form> 
+  </article>
+<script src="script2.js"></script>
+</main>
+
+<!-- Footer -->
+<footer>
+   Copyright ©2020 Plant Based Diet<br>
+   <a href="mailto:rand@rahim.com">rand@rahim.com</a>
+</footer>
+</body>
+</html>
